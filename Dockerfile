@@ -7,7 +7,7 @@ WORKDIR /application
 
 # Copy python dependencies and install these
 COPY example.py /application
-COPY app.py /application
+COPY flask_app.py /application
 COPY templates/* /application/templates/
 COPY requirements.txt /application
 RUN pip3 install -r requirements.txt
