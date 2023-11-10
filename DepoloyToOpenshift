@@ -1,0 +1,7 @@
+oc new-build --strategy docker --binary --name=flask-asyncpg-dev 
+ 
+oc start-build flask-asyncpg-dev  --from-dir=. --follow --wait
+ 
+oc new-app flask-asyncpg-dev  --name=flask-asyncpg-dev 
+
+oc create route edge --service=flask-asyncpg-dev 
