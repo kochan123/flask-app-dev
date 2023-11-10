@@ -6,10 +6,12 @@ FROM registry.access.redhat.com/ubi8/python-39:latest
 WORKDIR /application
 
 # Copy python dependencies and install these
-COPY requirements.txt .
+COPY example.py /application
+COPY app.py /application
+COPY templates/* /application/templates/
+COPY requirements.txt /application
 RUN pip3 install -r requirements.txt
-# Copy the rest of the applicationssd
-COPY . .
+
 
 # Environment variables
 ENV PYTHONUNBUFFERED 1
